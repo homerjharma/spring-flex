@@ -1,13 +1,14 @@
 package org.springframework.flex.messaging.jms;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.junit.After;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -35,18 +36,18 @@ public class JmsAdapterTests extends AbstractMessageBrokerTests {
     @Before
     public void setUp() throws Exception {
     	MockitoAnnotations.initMocks(this);
+        FlexContext.setThreadLocalFlexClient(getMessageBroker().getFlexClientManager().getFlexClient("foo"));
     }
     
     @After
     public void tearDown() throws Exception {
         getMessageService().removeDestination(DEST_ID);
+        FlexContext.clearThreadLocalObjects();
     }
 
     @Test
     public void destinationSubscribeSendUnsubscribe() throws Exception {
         JmsAdapter adapter = createAdapter();
-        
-        FlexContext.setThreadLocalFlexClient(getMessageBroker().getFlexClientManager().getFlexClient("foo"));
         
         CommandMessage subscribeMessage = new CommandMessage(CommandMessage.SUBSCRIBE_OPERATION);
         subscribeMessage.setClientId("1234");
