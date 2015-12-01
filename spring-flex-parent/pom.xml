@@ -23,11 +23,12 @@
 		</license>
 	</licenses>
     
-    <url>https://github.com/spring-projects/spring-flex</url>
+    <url>https://github.com/homerjharma/spring-flex</url>
     
     <scm>
-    	<url>https://github.com/spring-projects/spring-flex</url>
-    	<connection>https://github.com/spring-projects/spring-flex.git</connection>
+        <url>scm:git:https://github.com/homerjharma/spring-flex.git</url>
+        <connection>scm:git:https://@${username}:${password}@github.com/homerjharma/spring-flex.git</connection>
+        <developerConnection>scm:git:https://@${username}:${password}@github.com/homerjharma/spring-flex.git</developerConnection>
     </scm>
     
     <developers>
