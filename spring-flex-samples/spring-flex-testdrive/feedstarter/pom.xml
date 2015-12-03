@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.flex.samples</groupId>
 		<artifactId>spring-flex-testdrive</artifactId>
-		<version>1.6.0.1.CUSTOM</version>
+		<version>1.6.0.2.CUSTOM-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>feedstarter</artifactId>

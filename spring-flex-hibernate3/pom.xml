@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-flex-parent</artifactId>
         <groupId>org.springframework.flex</groupId>
-        <version>1.6.0.1.CUSTOM</version>
+        <version>1.6.0.2.CUSTOM-SNAPSHOT</version>
         <relativePath>../spring-flex-parent</relativePath>
     </parent>
 
